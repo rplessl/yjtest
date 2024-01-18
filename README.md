@@ -51,14 +51,6 @@ Preserves map order.
 
 ## Installation
 
-### Homebrew
-
-The `yj` CLI is available via [Homebrew](https://brew.sh):
-
-```bash
-brew install yj
-```
-
 ### Manual
 
 Binaries for macOS, Linux, and Windows are [attached to each release](https://github.com/rplessl/yjtest/releases).
@@ -74,3 +66,11 @@ Packages contained in this repo may also be used to convert all supported data f
 See [godoc](https://pkg.go.dev/github.com/rplessl/yjtest) for details.
 
 NOTE: The current Go API should not be considered stable.
+
+### Homebrew (version from sclevine/yj)
+
+The `yj` CLI is available via [Homebrew](https://brew.sh):
+
+```bash
+brew install yj
+```
