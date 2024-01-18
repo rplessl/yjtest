@@ -3,7 +3,7 @@ package toml
 import (
 	"math"
 
-	"github.com/sclevine/yj/v5/order"
+	"github.com/rplessl/yjtest/v5/order"
 )
 
 type Encoder struct {

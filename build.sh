@@ -15,5 +15,5 @@ GOOS=linux GOARCH=arm GOARM=5 go build -ldflags "-X main.Version=$version" -o "$
 GOOS=linux GOARCH=arm GOARM=7 go build -ldflags "-X main.Version=$version" -o "$out/yj-linux-arm-v7" .
 GOOS=windows GOARCH=amd64 go build -ldflags "-X main.Version=$version" -o "$out/yj.exe" .
 
-docker build . --build-arg "version=$version" -t "sclevine/yj:$version"
-docker tag "sclevine/yj:$version" "sclevine/yj:latest"
+docker build . --build-arg "version=$version" -t "rplessl/yjtest:$version"
+docker tag "rplessl/yjtest:$version" "rplessl/yjtest:latest"

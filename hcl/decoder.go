@@ -6,7 +6,7 @@ import (
 	"github.com/hashicorp/hcl"
 	"github.com/hashicorp/hcl/hcl/ast"
 
-	"github.com/sclevine/yj/v5/order"
+	"github.com/rplessl/yjtest/v5/order"
 )
 
 type Decoder struct{}

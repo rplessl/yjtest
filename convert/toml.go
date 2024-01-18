@@ -5,7 +5,7 @@ import (
 
 	gotoml "github.com/BurntSushi/toml"
 
-	"github.com/sclevine/yj/v5/toml"
+	"github.com/rplessl/yjtest/v5/toml"
 )
 
 type TOML struct {

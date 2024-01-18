@@ -1,4 +1,4 @@
-module github.com/sclevine/yj/v5
+module github.com/rplessl/yjtest/v5
 
 go 1.21
 
