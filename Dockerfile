@@ -1,5 +1,5 @@
-# Use a specific version of golang:alpine for reproducible builds
-FROM golang:alpine3.19 AS builder
+# Use a specific version of golang:alpine for reproducible builds and multiarch builds
+FROM --platform=$BUILDPLATFORM golang:alpine3.19 AS builder
 
 # Install git, which is required for fetching Go dependencies.
 # Combine update and add into one RUN statement to reduce layers.
@@ -24,10 +24,15 @@ COPY . .
 # Accept version as a build argument, defaulting to "0.0.0".
 ARG version="0.0.0"
 
+# Set the target OS and architecture for cross-compilation.
+# These arguments will be passed by the docker buildx command.
+ARG TARGETOS
+ARG TARGETARCH
+
 # Build the Go app as a static binary.
 # Output the binary to a known location for easier retrieval in later stages.
 # Use CGO_ENABLED=0 for a fully static binary that doesn't depend on C libraries.
-RUN CGO_ENABLED=0 go build -ldflags "-X main.Version=$version" -o /build/yj .
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -ldflags "-X main.Version=$version" -o /build/yj .
 
 # Use scratch (an empty image) for the smallest possible image size.
 FROM scratch
