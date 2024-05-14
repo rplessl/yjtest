@@ -19,7 +19,7 @@ jobs:
       tree-state: ${{ steps.ldflags.outputs.tree-state }}
     steps:
       - id: checkout
-        uses: actions/checkout@60edb5dd545a775178f52524783378180af0d1f8 # tag=v4.0.2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - id: ldflags
